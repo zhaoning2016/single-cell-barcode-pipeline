@@ -1,0 +1,18 @@
+---------------------------------- test data ---------------------------------------
+P-17_raw_1.fq , P-17_raw_2.fq 
+contain 96 cells (96 cell barcode)
+barcode && UMI sequence in read2
+------------------------------------------------------------------------------------
+-------------------------------------1-data split ------------------------------
+Script:barcode_UMI_demultiplexing.pl
+USAGE  : perl barcode_UMI_demultiplexing.pl read1.fq read2.fq b_structure index mismatch prefix 
+                read1.fq : barcode/umi containing read
+                read2.fq : non-barcode containing read
+                b_structure : a single string of the format C##U# or U#C##
+                        where C## is the cell-barcode and U# is the UMI.
+                        e.g. C10U4 = a 10bp cell barcode followed by a 4bp UMI
+                index : file containg a single column of expected cell-barcodes.
+                        if equal to \"UNKNOWN\" script will output read counts for each unique barcode.
+                mismatch : maximum number of permitted mismatches (recommend 2)
+                prefix : prefix for output fastq files.\n";
+perl barcode_UMI_demultiplexing.pl 10cells_read1.fq 10cells_read2.fq "C12U8" 10cells_barcodes.txt 2 Ex
