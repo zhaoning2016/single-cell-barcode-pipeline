@@ -15,4 +15,5 @@ USAGE  : perl barcode_UMI_demultiplexing.pl read1.fq read2.fq b_structure index 
                         if equal to \"UNKNOWN\" script will output read counts for each unique barcode.
                 mismatch : maximum number of permitted mismatches (recommend 2)
                 prefix : prefix for output fastq files.\n";
-perl barcode_UMI_demultiplexing.pl 10cells_read1.fq 10cells_read2.fq "C12U8" 10cells_barcodes.txt 2 Ex
+Example :                 
+perl barcode_UMI_demultiplexing.pl P-17_raw_2.fq P-17_raw_1.fq "C8U8" barcode.txt 2 P17
